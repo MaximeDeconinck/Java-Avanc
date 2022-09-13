@@ -1,5 +1,7 @@
 package fr.dauphine.javaavance.td1;
 
+import java.util.Set;
+
 public class Exo1 {
 	
 	public static void main(String[] args) {
@@ -21,4 +23,16 @@ public class Exo1 {
 		
 	}
 	
+	// 5.1 - Pressing only Ctrl + Space
+	int foo;
+	public Exo1() {
+		TODO();
+	}
+	
+	// 5.2 - Pressing Ctrl +  Space after typing set
+	public void setFoo(int foo) {
+		this.foo = foo;
+	}
+	
+	// 6 - Alt + Shift + R allows you to rename a class/variable
 }
