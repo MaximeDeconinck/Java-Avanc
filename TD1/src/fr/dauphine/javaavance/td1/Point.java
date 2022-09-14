@@ -5,10 +5,12 @@ public class Point {
 	private int x;
 	private int y;
 	
+	/*
 	public void afficherPoint() {
 		Point p = new Point();
 		System.out.println(p.x + " " + p.y);
 	}
+	*/
 	
 	// 1 - It works because we create first a Point object and then we print the coordinates.
 	
@@ -36,9 +38,30 @@ public class Point {
 		return y;
 	}
 	
+	// 2 -
+	public static boolean isSameAs(Point p1, Point p2) {
+		return p1.getX() == p2.getX() && p1.getY() == p2.getY();
+	}
+	
 	@Override
 	public String toString() {
 		return "("+getX()+";"+getY()+")";
 	}
+	
+	// 3 -
+	@Override
+	public boolean equals(Object o) {		
+		
+        if (o == this) {
+            return true;
+        }
+
+        if (!(o != null)) {
+            return false;
+        }
+        
+        Point p = (Point) o;
+        return isSameAs(this,p);
+    }
 	
 }
