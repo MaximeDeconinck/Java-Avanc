@@ -17,5 +17,10 @@ public class Exo5 {
 		
 		c2 = c2.translate(1,1);
 		System.out.println(c + " " + c2);
+		
+		// 6 - Once again, we have to create a whole new circle :
+		Circle c3 = new Circle(new Point(1,2), 1);
+		c3 = new Circle(c3.getCenter().translate(1,1), c3.r);
+		System.out.println(c3);
 	}
 }
