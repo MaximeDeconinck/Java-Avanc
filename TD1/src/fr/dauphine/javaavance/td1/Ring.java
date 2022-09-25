@@ -19,4 +19,33 @@ public class Ring {
 			throw new IllegalArgumentException("r1 bigger than r2");
 		}
 	}
+	
+	// 3 -
+	public boolean equals(Ring ring) {
+		if (this.p.equals(ring.p)) {
+			if (this.r1 == ring.r1) {
+				if (this.r2 == ring.r2) {
+					return true;
+				}
+			}
+		}
+		return false;
+	}
+	
+	// 4 -
+	@Override
+	public String toString() {
+		return "(("+p.getX()+","+p.getY()+"),"+r1+","+r2+")";
+	}
+	
+	// 5 -
+	public boolean contains(Point p1) {
+		double d = Math.sqrt(Math.pow(this.p.getX()-p1.getX(),2) - Math.pow(this.p.getY()-p1.getY(),2));
+		if (this.r1 < d) {
+			if (this.r2 > d) {
+				return true;
+			}
+		}
+		return false;
+	}
 }
