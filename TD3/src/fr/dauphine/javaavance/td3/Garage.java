@@ -38,11 +38,21 @@ public class Garage {
 	}
 	
 	// 9 -
-	private int getGarageValue() {
+	public int getGarageValue() {
 		int total = 0;
 		for (Car car : this.garage) {
 			total = (int) (total + car.value);
 		}
 		return total;
+	}
+	
+	// 10 -
+	public Car firstCarByBrand(Car car) throws Error {
+		for (Car carInGarage : this.garage) {
+			if (carInGarage.brand.equals(car.brand)) {
+				return carInGarage;
+			}
+		}
+		throw new Error("No car with this brand in garage");
 	}
 }
