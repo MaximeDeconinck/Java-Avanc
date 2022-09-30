@@ -11,9 +11,23 @@ public class Car {
 		// 3 -
 		if (value < 0) {
 			throw new IllegalArgumentException("Negative value");
-		} else {
-			this.brand = brand;
-			this.value = value;
 		}
+		this.brand = brand;
+		this.value = value;
+	}
+	
+	// 4 -
+	public String getBrand() {
+		return brand;
+	}
+
+	public long getValue() {
+		return value;
+	}
+	
+	// 5 -
+	@Override
+	public String toString() {
+		return "(" + brand + ", " + value + ")";
 	}
 }
