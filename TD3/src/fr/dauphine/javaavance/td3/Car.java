@@ -15,6 +15,7 @@ public class Car {
 		}
 		this.brand = brand;
 		this.value = value;
+		this.vetuste = 0;
 	}
 	
 	// 11 -
@@ -45,5 +46,27 @@ public class Car {
 	@Override
 	public String toString() {
 		return "(" + brand + ", " + value + ")";
+	}
+	
+	// Exo2
+	@Override
+	public boolean equals(Object o) {		
+			
+	        if (o == this) {
+	            return true;
+	        }
+	
+	        if (!(o != null)) {
+	            return false;
+	        }
+	        
+	        Car c = (Car) o;
+	        
+	        if (this.brand.equals(c.brand)) {
+	        	if (this.value == c.value) {
+	        		return true;
+	        	}
+	        }
+	        return false;
 	}
 }
