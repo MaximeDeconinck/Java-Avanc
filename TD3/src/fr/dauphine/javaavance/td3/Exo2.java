@@ -31,7 +31,7 @@ public class Exo2 {
 		System.out.println(list.indexOf(c));
 		System.out.println(b.equals(c));
 		
-		// 3 -
+		// 3 - We create a brand new implementation of HashCode and equals to have true here (it doesn't break what we code before)
 		HashSet<Car> set = new HashSet<Car>();
 		set.add(b);
 		System.out.println(set.contains(c));

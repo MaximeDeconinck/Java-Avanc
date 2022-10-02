@@ -1,5 +1,7 @@
 package fr.dauphine.javaavance.td3;
 
+import java.util.Objects;
+
 public class Car {
 	
 	// 1 -
@@ -48,25 +50,22 @@ public class Car {
 		return "(" + brand + ", " + value + ")";
 	}
 	
-	// Exo2
 	@Override
-	public boolean equals(Object o) {		
-			
-	        if (o == this) {
-	            return true;
-	        }
-	
-	        if (!(o != null)) {
-	            return false;
-	        }
-	        
-	        Car c = (Car) o;
-	        
-	        if (this.brand.equals(c.brand)) {
-	        	if (this.value == c.value) {
-	        		return true;
-	        	}
-	        }
-	        return false;
+	public int hashCode() {
+		return Objects.hash(brand, value, vetuste);
 	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Car other = (Car) obj;
+		return Objects.equals(brand, other.brand) && value == other.value && vetuste == other.vetuste;
+	}
+	
+	
 }

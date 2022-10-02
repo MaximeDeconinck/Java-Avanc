@@ -55,4 +55,12 @@ public class Garage {
 		}
 		throw new Error("No car with this brand in garage");
 	}
+	
+	// Exo2 - 4 - 
+	public void remove(Car c) throws IllegalArgumentException {
+		if (this.garage.indexOf(c) == -1) {
+			throw new IllegalArgumentException("Car not in garage");
+		}
+		this.garage.remove(this.garage.indexOf(c));
+	}
 }
