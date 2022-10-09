@@ -63,4 +63,12 @@ public class Garage {
 		}
 		this.garage.remove(this.garage.indexOf(c));
 	}
+	
+	public void protectionism(String brand) {
+		for (Vehicule vehicule : this.garage) {
+			if (vehicule.brand.equals(brand)) {
+				this.garage.remove(vehicule);
+			}
+		}
+	}
 }
