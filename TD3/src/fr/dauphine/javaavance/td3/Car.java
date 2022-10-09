@@ -2,11 +2,9 @@ package fr.dauphine.javaavance.td3;
 
 import java.util.Objects;
 
-public class Car {
+public class Car extends Vehicule {
 	
 	// 1 -
-	final String brand;
-	long value;
 	int vetuste;
 	
 	// 2 -

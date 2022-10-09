@@ -1,12 +1,9 @@
 package fr.dauphine.javaavance.td3;
 
-public class Bike {
-	
-	String marque;
-	int valeur;
+public class Bike extends Vehicule {
 	
 	public Bike(String marque) {
-		this.marque = marque;
-		this.valeur = 100;
+		this.brand = marque;
+		this.value = 100;
 	}
 }

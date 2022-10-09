@@ -1,12 +1,12 @@
 package fr.dauphine.javaavance.td3;
-import fr.dauphine.javaavance.td3.Car;
+import fr.dauphine.javaavance.td3.Vehicule;
 import java.util.ArrayList;
 import java.util.Objects;
 
 public class Garage {
 	
 	// 6 -
-	ArrayList<Car> garage;
+	ArrayList<Vehicule> garage;
 	int taille;
 	int id = 0;
 	static int count = 0;
@@ -18,9 +18,9 @@ public class Garage {
 		this.id = count++;
 	}
 	
-	public void add(Car car) {
-		Objects.requireNonNull(car, "car must not be null");
-		this.garage.add(car);
+	public void add(Vehicule vehicule) {
+		Objects.requireNonNull(vehicule, "car must not be null");
+		this.garage.add(vehicule);
 	}
 	
 	public int getId() {
@@ -31,8 +31,8 @@ public class Garage {
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		for (Car car : this.garage) {
-			builder.append(car);
+		for (Vehicule vehicule : this.garage) {
+			builder.append(vehicule);
 		}
 		return builder.toString();
 	}
@@ -40,17 +40,17 @@ public class Garage {
 	// 9 -
 	public int getGarageValue() {
 		int total = 0;
-		for (Car car : this.garage) {
-			total = (int) (total + car.value);
+		for (Vehicule vehicule : this.garage) {
+			total = (int) (total + vehicule.value);
 		}
 		return total;
 	}
 	
 	// 10 -
 	public Car firstCarByBrand(Car car) throws Error {
-		for (Car carInGarage : this.garage) {
+		for (Vehicule carInGarage : this.garage) {
 			if (carInGarage.brand.equals(car.brand)) {
-				return carInGarage;
+				return (Car) carInGarage;
 			}
 		}
 		throw new Error("No car with this brand in garage");
